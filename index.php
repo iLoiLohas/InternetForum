@@ -18,10 +18,11 @@ $result = mysql_query($sql) or die('query error：' . mysql_error());
 ?>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html"; charset=utf-8 />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>掲示板ホーム</title>
 </head>
 <body>
+<h1>掲示板</h1>
 <p><a href="thread_new.php">スレッド作成</a></p>
 <table>
 <!-- スレッドが作成してあった場合に実行 -->

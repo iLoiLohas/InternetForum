@@ -1,5 +1,9 @@
 <?php
-$id = isset($_GET['id']) ? $_GET['id'] : null;	// スレッドのid
+if (isset($_GET['id'])) {
+	$id = $_GET['id'];	// スレッドのid
+} else {
+	$id = $_POST['id'];
+}
 $type = isset($_POST['type']) ? $_POST['type'] : null;
 
 if ($type == 'create') {
@@ -11,6 +15,7 @@ if ($type == 'create') {
 	$name = $_POST['name'];
 	// 書き込み
 	$sql_res = "INSERT INTO responses (thread_id, body, name, created_at) VALUES ($id, '$body', '$name', now())";
+	print_r($sql_res);
 	$result_set = mysql_query($sql_res) or die('query error１：' . mysql_error());
 
 	// スレッド画面に遷移
